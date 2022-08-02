@@ -1,3 +1,6 @@
+#color-palette{ 
+text-align: center;
+}
 .color { 
     display: inline-block;
     height: 25px;
@@ -17,6 +20,7 @@
     background-color: rgb(252, 5, 5);  
 }
 #pixel-board{
+    margin: auto;
     height: 240px;
     width: 240px;
     font-size: 0;
