@@ -1,5 +1,6 @@
 let x = document.getElementById('color-palette');
 let y = document.getElementById('pixel-board');
+let z = document.getElementById('clear-board');
 let a = 'rgb(0, 0, 0)';
   
 function mudarCor1 (parametro){
@@ -28,6 +29,16 @@ function addCor (parametro2) {
 parametro2.target.style.backgroundColor = a
 }
  y.addEventListener('click', addCor)
+
+ function limpar (){  
+ let selected = document.getElementsByClassName('pixel');
+ for (let i = 0; i<selected.length; i += 1){
+selected[i].style.backgroundColor = "white"
+ }
+}
+z.addEventListener('click', limpar)
+
+
 
 //function quadroEmBranco (parametro){
 //    let localização = document.GetElementsByClassName('pixel')
