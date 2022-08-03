@@ -21,8 +21,8 @@ text-align: center;
 }
 #pixel-board{
     margin: auto;
-    height: 240px;
-    width: 240px;
+    height: 210px;
+    width: 210px;
     font-size: 0;
 }
 .pixel { 

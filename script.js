@@ -1,17 +1,33 @@
-window.onload = function(){
-  function resultado (){
+let x = document.getElementById('color-palette');
+let y = document.getElementById('pixel-board');
+let a = 'rgb(0, 0, 0)';
+  
+function mudarCor1 (parametro){
+    let selected = document.querySelector('.selected');
+    selected.classList.remove('selected');
+    parametro.target.classList.add('selected');
+}
+x.addEventListener('click', mudarCor1)
+function resultado (){
   let preto = document.getElementsByClassName('color')[0]
   preto.classList.add('selected')
 }
 resultado()
+//ele está errando pq já tem um valor adicionado. Tenho que apagar a cor pre definida antes que o compu...
+function mudarCor (parametro1) {
+let selected = document.querySelector('.selected');
+selected.classList.remove('selected');
+parametro1.target.classList.add('selected');
+let cor = window.getComputedStyle(selected);
+let corADD = cor.getPropertyValue('background-color');
+return a = corADD
 }
-let x = document.getElementById('color-palette')
-function mudarCor (parametro) {
-let selected = document.querySelector('.selected')
-selected.classList.remove('selected')
-parametro.target.classList.add('selected')
-} 
-x.addEventListener("click", mudarCor)
+x.addEventListener('click', mudarCor)
+
+function addCor (parametro2) {  
+parametro2.target.style.backgroundColor = a
+}
+ y.addEventListener('click', addCor)
 
 //function quadroEmBranco (parametro){
 //    let localização = document.GetElementsByClassName('pixel')
