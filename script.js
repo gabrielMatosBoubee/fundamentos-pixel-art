@@ -1,42 +1,43 @@
-let x = document.getElementById('color-palette');
-let y = document.getElementById('pixel-board');
-let z = document.getElementById('clear-board');
-let a = 'rgb(0, 0, 0)';
-  
-function mudarCor1 (parametro){
+let secaoDeCores = document.getElementById('color-palette');
+let quadroEmBranco = document.getElementById('pixel-board');
+let botaoLimpar = document.getElementById('clear-board');
+let corInicial = 'rgb(0, 0, 0)';
+
+function mudarCor (eventclick){
     let selected = document.querySelector('.selected');
     selected.classList.remove('selected');
-    parametro.target.classList.add('selected');
+    eventclick.target.classList.add('selected');
 }
-x.addEventListener('click', mudarCor1)
-function resultado (){
+//
+secaoDeCores.addEventListener('click', mudarCor)
+function corPredefinida (){
   let preto = document.getElementsByClassName('color')[0]
   preto.classList.add('selected')
 }
-resultado()
-//ele está errando pq já tem um valor adicionado. Tenho que apagar a cor pre definida antes que o compu...
-function mudarCor (parametro1) {
+corPredefinida()
+//
+function pegaCor (eventclick1) {
 let selected = document.querySelector('.selected');
 selected.classList.remove('selected');
-parametro1.target.classList.add('selected');
+eventclick1.target.classList.add('selected');
 let cor = window.getComputedStyle(selected);
 let corADD = cor.getPropertyValue('background-color');
-return a = corADD
+return corInicial = corADD
 }
-x.addEventListener('click', mudarCor)
-
+secaoDeCores.addEventListener('click', pegaCor)
+//
 function addCor (parametro2) {  
-parametro2.target.style.backgroundColor = a
+parametro2.target.style.backgroundColor = corInicial
 }
- y.addEventListener('click', addCor)
-
+ quadroEmBranco.addEventListener('click', addCor)
+//
  function limpar (){  
  let selected = document.getElementsByClassName('pixel');
  for (let i = 0; i<selected.length; i += 1){
-selected[i].style.backgroundColor = "white"
+selected[i].style.backgroundColor = "rgb(255, 255, 255)"
  }
-}
-z.addEventListener('click', limpar)
+} 
+botaoLimpar.addEventListener('click', limpar)
 
 
 
